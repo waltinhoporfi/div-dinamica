@@ -1,0 +1,18 @@
+<select #escolha (change)="0">
+  <option value="alert-success">Sucesso</option>
+  <option value="alert-info">Info</option>
+  <option value="alert-danger">Danger</option>
+</select>
+<br><br>
+
+<div class="alert {{ escolha.value }}">
+  Texto conforme a escolha
+</div>
+
+<div class="alert" role="alert" [class.alert-success]="escolha.value == 'alert-success'">SUCESSO</div>
+<div class="alert" role="info" [class.alert-info]="escolha.value == 'alert-info'">INFO</div>
+
+<div class="alert alert-danger" 
+[style.display]="escolha.value == 'alert-danger' ? 'block' : 'none' ">
+  So aparece se a escolha for danger(erro)
+</div>
